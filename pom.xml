@@ -5,7 +5,7 @@
     <artifactId>proj3</artifactId>
     <version>1.0-Sourabh</version>
     <packaging>pom</packaging>
-    <name>Project Build</name>
+    <name>Project Build - Sonar</name>
 
     <modules>
         <module>project</module>
@@ -13,6 +13,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+	<maven.compiler.target>1.7</maven.compiler.target>
     </properties>
 
    <dependencies>
@@ -37,14 +39,7 @@
                     <version>2.1.2</version>
                 </plugin>
                 
-                <plugin>
-		    <groupId>org.apache.maven.plugins</groupId>
-		    <artifactId>maven-compiler-plugin</artifactId>
-		    <configuration>
-		        <source>1.6</source>
-		        <target>1.6</target>
-		    </configuration>
-	        </plugin>
+
             </plugins>
         </pluginManagement>
         <plugins>
