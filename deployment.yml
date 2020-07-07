@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: myapp
+ name: mykubeapp
  labels:
-  app: myapp
+  app: mykubeapp
 spec:
  replicas: 2
  selector:
   matchLabels:
-   app: myapp
+   app: mykubeapp
  template:
   metadata: 
    labels:
-    app: myapp
+    app: mykubeapp
   spec:
    containers:
-   - name: myapp
+   - name: mykubeapp
      image: sourabhrana46/K8s:tagversion
      ports:
      - containerPort: 8080
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp
+  name: mykubeapp
 spec:
   type: LoadBalancer
   selector:
-    app: myapp
+    app: mykubeapp
   ports:
     - protocol: TCP
       port: 80
