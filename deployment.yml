@@ -17,7 +17,7 @@ spec:
   spec:
    containers:
    - name: mykubeapp
-     image: sourabhrana46/K8s:tagversion
+     image: sourabhrana46/k8s:tagversion
      ports:
      - containerPort: 8080
 
