@@ -2,7 +2,7 @@ pipeline {
     agent any 	
 	environment {
 		
-		PROJECT_ID = 'astral-gateway-276315'
+		PROJECT_ID = 'stral-gateway-276315'
                 CLUSTER_NAME = 'kube-demo'
                 LOCATION = 'us-central1-c'
                 CREDENTIALS_ID = 'K8s'		
@@ -30,7 +30,7 @@ pipeline {
 	   stage('Build Docker Image') { 
 		steps {
                    script {
-		      myimage = docker.build("sourabhrana46/k8s:${env.BUILD_ID}")
+		      myapp = docker.build("sourabhrana46/k8s:${env.BUILD_ID}")
                    }
                 }
 	   }
@@ -38,7 +38,7 @@ pipeline {
                 steps {
                    script {
                       docker.withRegistry('https://registry.hub.docker.com', 'Docker') {
-                            myimage.push("${env.BUILD_ID}")		
+                            myapp.push("${env.BUILD_ID}")		
                      }
 			   
                    }
